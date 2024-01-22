@@ -24,7 +24,7 @@ TGswParams::TGswParams(int32_t l, int32_t Bgbit, const TLweParams *tlwe_params) 
         uint32_t temp0 = 1 << (32 - (i + 1) * Bgbit);
         temp1 += temp0;
     }
-    offset = temp1 * halfBg;
+    offset = (temp1 * halfBg) + (1 << (31 - l * Bgbit));
 
 }
 
